@@ -1,11 +1,12 @@
 import React from "react";
+import { DEFAULTPASSWORDOPTIONS } from "../constants/DefaultPassowordOptions";
 
 interface SliderProps {
   onChangeCallback: (value: number) => void;
 }
 
 const Slider = ({ onChangeCallback }: SliderProps) => {
-  const [value, setValue] = React.useState(16);
+  const [value, setValue] = React.useState(DEFAULTPASSWORDOPTIONS.length);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(parseInt(e.target.value));
