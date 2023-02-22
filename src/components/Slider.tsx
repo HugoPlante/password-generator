@@ -13,7 +13,7 @@ const Slider = ({ onChangeCallback }: SliderProps) => {
   };
 
   return (
-    <div className="">
+    <div className="w-full">
       <label htmlFor="customRange1" className="inline-block text-black">
         Length : {value}
       </label>

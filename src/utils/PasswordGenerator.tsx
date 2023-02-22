@@ -21,10 +21,16 @@ function mergeAlphabets(options: GeneratorOptions) {
   if (options.includeUppercase) allPossibleCharacters += upperCaseAlphabet;
   if (options.includeNumbers) allPossibleCharacters += numbers;
   if (options.includeSymbols) allPossibleCharacters += symbols;
+  if (options.excludeSimilarCharacters)
+    allPossibleCharacters = removeSimilarCharacters(allPossibleCharacters);
 
   return allPossibleCharacters;
 }
 
 function shuffleString(str: string) {
   return [...str].sort(() => Math.random() - 0.5).join("");
+}
+
+function removeSimilarCharacters(str: string) {
+  return str.replace(new RegExp("[" + similarCharacters + "]", "g"), "");
 }

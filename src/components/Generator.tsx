@@ -1,8 +1,6 @@
 import React from "react";
 import { DEFAULTPASSWORDOPTIONS } from "../constants/DefaultPassowordOptions";
-import { GeneratorOptions } from "../types/PasswordOptions";
 import { generatePassword } from "../utils/PasswordGenerator";
-import PasswordOptions from "./PasswordOptions";
 import Slider from "./Slider";
 import Toggle from "./Toggle";
 
