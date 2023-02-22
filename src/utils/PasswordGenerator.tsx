@@ -9,9 +9,15 @@ import {
 
 export const generatePassword = (options: GeneratorOptions): string => {
   const allPossibleCharacters = mergeAlphabets(options);
-  const finalCharacters = shuffleString(shuffleString(allPossibleCharacters));
 
-  return finalCharacters.slice(0, options.length);
+  let password = "";
+  for (let i = 0; i < options.length; i++) {
+    password += allPossibleCharacters.charAt(
+      Math.floor(Math.random() * allPossibleCharacters.length)
+    );
+  }
+
+  return password;
 };
 
 function mergeAlphabets(options: GeneratorOptions) {
@@ -25,10 +31,6 @@ function mergeAlphabets(options: GeneratorOptions) {
     allPossibleCharacters = removeSimilarCharacters(allPossibleCharacters);
 
   return allPossibleCharacters;
-}
-
-function shuffleString(str: string) {
-  return [...str].sort(() => Math.random() - 0.5).join("");
 }
 
 function removeSimilarCharacters(str: string) {
