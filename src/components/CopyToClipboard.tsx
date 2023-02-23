@@ -11,6 +11,7 @@ const CopyToClipboard = ({ copyCallback }: CopyToClipboardProps) => {
       type="button"
       onClick={copyCallback}
       className=" hover:drop-shadow-2xl hover:bg-gray-300 p-2"
+      aria-label="copyToClipboard"
     >
       <ClipboardDocumentIcon className=" w-8" />
     </button>
